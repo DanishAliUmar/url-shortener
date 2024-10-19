@@ -67,7 +67,9 @@ const Login = () => {
 
 
   return (
-    <div>login</div>
+    <Card>
+      card
+    </Card>
   )
 }
 
