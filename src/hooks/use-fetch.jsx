@@ -6,20 +6,9 @@ const useFetch=(cb, options = {})=>{
     const [error, setError] = useState(null)
 
 
-    const fn = async (...args)=>{
-        setLoading(true);
-        setError(null);
-        try {
-            const response = await cb(options, ...args);
-            setDate(response);
-        } catch (error) {
-            setError(error);
-        }finally{
-            setLoading(false)
-        }
-    }
+   
 
-    return {date, loading, error, fn}
+    return {date, loading, error, }
 }
 
 export default useFetch;
