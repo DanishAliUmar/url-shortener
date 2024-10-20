@@ -11,7 +11,7 @@ export async function login({email,password}) {
     return data;
 }
 
-export async function hetCurrentUser() {
+export async function getCurrentUser() {
     const {data:session, error} = await supabase.auth.getSession();
     if (!session.session) return null;
     if (error) throw new Error(error.message);
