@@ -53,12 +53,12 @@ const Login = () => {
 
       await schema.validate(formData, { abortEarly: false })
       //api call
-      // await fnLogin()
+      await fnLogin()
     } catch (e) {
-      // const newErrors = {}
-      // e?.inner?.forEach((err) => {
-      //   newErrors[err.path] = err.message
-      // });
+      const newErrors = {}
+      e?.inner?.forEach((err) => {
+        newErrors[err.path] = err.message
+      });
 
       setErrors(newErrors)
     }
