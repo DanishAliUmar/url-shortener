@@ -18,7 +18,7 @@ import { useNavigate, useSearchParams } from 'react-router-dom'
 const Login = () => {
   const [errors, setErrors] = useState([])
   const [formData, setFormData] = useState({
-    email: "";
+    email: "",
     password: ""
   })
 
