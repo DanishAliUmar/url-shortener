@@ -22,6 +22,16 @@ const Login = () => {
     password: ""
   })
 
+  const navigate = useNavigate();
+  let [searchParams] = useSearchParams();
+  const longLink = searchParams.get("createNew"); 
+  const handleInputChange = (e) => {
+    const { name, value } = e.target
+    setFormData((prevState) => ({
+      ...prevState,
+      [name]: value,
+    }))
+  } 
 
 
   const {data , error, loading, fn:fnLogin} = useFetch(login, formData)
