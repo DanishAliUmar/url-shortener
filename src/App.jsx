@@ -1,5 +1,5 @@
 import { Children, useState } from 'react'
-import {RouterProvider, createBrowserRouter} from 'react-router-dom'
+import { RouterProvider, createBrowserRouter } from 'react-router-dom'
 import './App.css'
 import AppLayout from './layouts/app-layout'
 import LandingPage from './pages/LandingPage'
@@ -7,31 +7,32 @@ import Dashboard from './pages/dashboard'
 import Auth from './pages/auth'
 import Link from './pages/link'
 import ReDirect from './pages/redirect'
+import UrlProvider from './contex'
 
 
 const router = createBrowserRouter([
   {
-    element:<AppLayout/>,
-    children:[
+    element: <AppLayout />,
+    children: [
       {
-        path:'/',
-        element:<LandingPage/>
+        path: '/',
+        element: <LandingPage />
       },
       {
-        path:'/dashboard',
-        element:<Dashboard/>
+        path: '/dashboard',
+        element: <Dashboard />
       },
       {
-        path:'/auth',
-        element:<Auth/>
+        path: '/auth',
+        element: <Auth />
       },
       {
-        path:'/link/:id',
-        element:<Link/>
+        path: '/link/:id',
+        element: <Link />
       },
       {
-        path:'/:id',
-        element:<ReDirect/>
+        path: '/:id',
+        element: <ReDirect />
       },
     ]
   }
@@ -39,7 +40,9 @@ const router = createBrowserRouter([
 
 function App() {
 
-  return <RouterProvider router={router}/>
+  return <UrlProvider>
+    <RouterProvider router={router} />
+  </UrlProvider>
 }
 
 export default App
