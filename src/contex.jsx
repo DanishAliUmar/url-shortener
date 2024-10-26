@@ -6,11 +6,6 @@ const UrlContext = createContext()
 
 const UrlProvider = ({ Children }) => {
 
-    const {data: user, loading, fn: fetchuser} = useFetch(getCurrentUser)
-
-    const isAthenticated = user?.role === "authenticated";
-
-
 
 
     return <UrlContext.Provider>
